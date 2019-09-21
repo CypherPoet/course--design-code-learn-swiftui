@@ -9,8 +9,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    private let topCardPadding: CGFloat = 72.0
+    
     var body: some View {
-        Text("Hello World")
+        ZStack(alignment: .top) {
+            Image("Background")
+
+            VStack {
+                Text("UI Design")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("accent"))
+                Text("Certificate")
+                    .foregroundColor(Color.white)
+            }
+            .padding(.top, -topCardPadding + 12)
+        }
+        .padding(.top, topCardPadding)
+        .background(Color.black)
+        .cornerRadius(18)
     }
 }
 
