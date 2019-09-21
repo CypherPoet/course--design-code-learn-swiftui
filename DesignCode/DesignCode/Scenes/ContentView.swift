@@ -9,25 +9,46 @@
 import SwiftUI
 
 struct ContentView: View {
-    private let topCardPadding: CGFloat = 72.0
-    
     var body: some View {
-        ZStack(alignment: .top) {
-            Image("Background")
-
+        ZStack {
+            
             VStack {
-                Text("UI Design")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("accent"))
-                Text("Certificate")
-                    .foregroundColor(Color.white)
+                Text("Card Back")
             }
-            .padding(.top, -topCardPadding + 12)
+            .frame(width: 300, height: 220.0)
+            .background(Color.blue)
+            .cornerRadius(18)
+            .shadow(radius: 10)
+            .offset(x: 0, y: -20)
+            
+            VStack {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("UI Design")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color("accent"))
+                            .padding(.top)
+                        
+                        Text("Certificate")
+                            .foregroundColor(Color.white)
+                    }
+                    Spacer()
+                    Image("Logo")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                }
+                .padding(.horizontal)
+                
+                Spacer()
+                
+                Image("Background")
+            }
+            .frame(width: 340.0, height: 220.0)
+            .background(Color.black)
+            .cornerRadius(18)
+            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
         }
-        .padding(.top, topCardPadding)
-        .background(Color.black)
-        .cornerRadius(18)
     }
 }
 
