@@ -58,6 +58,7 @@
 		F38D8AAC233609950025B083 /* DesignCode */ = {
 			isa = PBXGroup;
 			children = (
+				F38D8AC7233647850025B083 /* Reusables */,
 				F38D8ABB233609980025B083 /* Info.plist */,
 				F38D8AAD233609950025B083 /* AppDelegate.swift */,
 				F38D8AAF233609950025B083 /* SceneDelegate.swift */,
@@ -92,6 +93,21 @@
 				F38D8AB1233609950025B083 /* ContentView.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F38D8AC7233647850025B083 /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				F38D8AC8233647AF0025B083 /* Views */,
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		F38D8AC8233647AF0025B083 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
