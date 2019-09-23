@@ -21,8 +21,9 @@ struct Home: View {
                 Text("Open Menu")
             }
             
-            
             SettingsSidebar()
+                .padding(.trailing, 60)
+                .edgesIgnoringSafeArea(.bottom)
                 .animation(.easeOut)
                 .rotation3DEffect(
                     .radians((.pi / 3) * Double(sidebarOffsetFactor)),

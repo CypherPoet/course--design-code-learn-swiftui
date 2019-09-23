@@ -13,12 +13,12 @@ struct MenuRow: View {
     
     var body: some View {
         HStack {
-            Image(systemName: menuItem.imageName)
+            Image(systemName: self.menuItem.imageName)
                 .imageScale(.large)
                 .foregroundColor(Color("icons"))
                 .frame(width: 32, height: 32)
             
-            Text(menuItem.title)
+            Text(self.menuItem.title)
                 .font(.headline)
         }
     }
@@ -28,9 +28,6 @@ struct MenuRow: View {
 struct MenuRow_Previews: PreviewProvider {
     static var previews: some View {
         MenuRow(
-//            menuItem: .constant(
-//                MenuItem(title: "Menu Item", imageName: "person.circle")
-//            )
             menuItem: MenuItem(title: "Menu Item", imageName: "person.circle")
         )
     }

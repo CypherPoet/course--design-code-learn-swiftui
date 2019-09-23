@@ -12,12 +12,11 @@ struct SettingsSidebar: View {
     
     var body: some View {
         SettingsMenu()
-            .frame(minWidth: 0, idealWidth: 320, maxWidth: .infinity)
+            .padding(.top, 20)
             .padding(30)
+            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
             .background(Color.white)
             .cornerRadius(30)
-            .padding(.trailing, 60)
-            .edgesIgnoringSafeArea(.bottom)
             .shadow(radius: 20)
     }
 }
