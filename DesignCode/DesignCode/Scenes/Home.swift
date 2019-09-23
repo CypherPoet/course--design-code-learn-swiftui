@@ -11,7 +11,7 @@ import SwiftUI
 struct Home: View {
     @State private var isShowingSidebar = false
     
-    var sidebarOffsetFactor: CGFloat { isShowingSidebar ? 0 : 1 }
+//    var sidebarOffsetFactor: CGFloat { isShowingSidebar ? 0 : 1 }
     
     var body: some View {
         ZStack {
@@ -21,18 +21,9 @@ struct Home: View {
                 Text("Open Menu")
             }
             
-            SettingsSidebar()
+            SettingsSidebar(isShowing: $isShowingSidebar)
                 .padding(.trailing, 60)
                 .edgesIgnoringSafeArea(.bottom)
-                .animation(.easeOut)
-                .rotation3DEffect(
-                    .radians((.pi / 3) * Double(sidebarOffsetFactor)),
-                    axis: (x: 0, y: 1, z: 0)
-                )
-                .offset(x: -UIScreen.main.bounds.width * sidebarOffsetFactor)
-                .onTapGesture {
-                    self.isShowingSidebar.toggle()
-                }
         }
     }
 }
