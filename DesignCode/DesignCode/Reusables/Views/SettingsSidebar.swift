@@ -24,6 +24,6 @@ struct SettingsSidebar: View {
 
 struct SettingsSidebar_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsSidebar()
+        SettingsSidebar().environmentObject(MenuStore())
     }
 }

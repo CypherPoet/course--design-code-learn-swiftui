@@ -9,24 +9,29 @@
 import SwiftUI
 
 struct MenuRow: View {
-    var imageName: String = "person.circle"
-    var title: String
+    var menuItem: MenuItem
     
     var body: some View {
         HStack {
-            Image(systemName: imageName)
+            Image(systemName: menuItem.imageName)
                 .imageScale(.large)
                 .foregroundColor(Color("icons"))
                 .frame(width: 32, height: 32)
             
-            Text(title)
+            Text(menuItem.title)
                 .font(.headline)
         }
     }
 }
 
+
 struct MenuRow_Previews: PreviewProvider {
     static var previews: some View {
-        MenuRow(title: "Menu Row")
+        MenuRow(
+//            menuItem: .constant(
+//                MenuItem(title: "Menu Item", imageName: "person.circle")
+//            )
+            menuItem: MenuItem(title: "Menu Item", imageName: "person.circle")
+        )
     }
 }
