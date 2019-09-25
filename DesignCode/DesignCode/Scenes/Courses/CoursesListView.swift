@@ -30,9 +30,9 @@ struct CoursesListView: View {
                             CertificatesView()
                         }
                     }
-                    .padding(.leading, cardInnerSpacing)
-                    .padding(.vertical)
                 }
+                .padding(.leading, cardInnerSpacing)
+                .padding(.vertical, cardInnerSpacing * 2)
             }
             .navigationBarTitle("Courses", displayMode: .large)
         }

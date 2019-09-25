@@ -19,6 +19,8 @@ struct CertificatesView: View {
     var body: some View {
         
         ZStack {
+            BlurEffectView(blurStyle: .systemUltraThinMaterial)
+            
             HeaderView()
                 .blur(radius: 6 * CGFloat(cardTwistFactor))
                 .animation(.easeOut)
@@ -70,11 +72,9 @@ struct CertificatesView: View {
                         }
                 )
             
-
             BottomModal()
                 .blur(radius: 6 * CGFloat(cardTwistFactor))
                 .animation(.easeOut)
-
         }
     }
 }

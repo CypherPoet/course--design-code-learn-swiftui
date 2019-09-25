@@ -27,6 +27,7 @@
 		F38D8AE2233973FC0025B083 /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AE1233973FC0025B083 /* Courses.swift */; };
 		F38D8AE4233976A40025B083 /* IndexedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AE3233976A40025B083 /* IndexedCollection.swift */; };
 		F38D8AE6233AB2C40025B083 /* CourseListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AE5233AB2C40025B083 /* CourseListCard.swift */; };
+		F38D8AE8233BCFC50025B083 /* BlurEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AE7233BCFC50025B083 /* BlurEffectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		F38D8AE1233973FC0025B083 /* Courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
 		F38D8AE3233976A40025B083 /* IndexedCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedCollection.swift; sourceTree = "<group>"; };
 		F38D8AE5233AB2C40025B083 /* CourseListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListCard.swift; sourceTree = "<group>"; };
+		F38D8AE7233BCFC50025B083 /* BlurEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				F38D8ACF2337DB0D0025B083 /* SettingsMenu.swift */,
 				F38D8AD12337DB4E0025B083 /* MenuRow.swift */,
 				F38D8AE5233AB2C40025B083 /* CourseListCard.swift */,
+				F38D8AE7233BCFC50025B083 /* BlurEffectView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				F38D8AE4233976A40025B083 /* IndexedCollection.swift in Sources */,
 				F38D8AB2233609950025B083 /* CertificatesView.swift in Sources */,
 				F38D8ACE2337D1DE0025B083 /* SettingsSidebar.swift in Sources */,
+				F38D8AE8233BCFC50025B083 /* BlurEffectView.swift in Sources */,
 				F38D8AE0233973EC0025B083 /* CoursesStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

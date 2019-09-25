@@ -14,11 +14,11 @@ struct Home: View {
     
     var body: some View {
         ZStack(alignment: .topLeading) {
+
             CertificatesView()
-                .background(Color.white)
                 .cornerRadius(30)
                 .shadow(radius: 20)
-                .animation(.interpolatingSpring(mass: 1, stiffness: 111, damping: 36, initialVelocity: 15))
+                .animation(.interpolatingSpring(mass: 0.9, stiffness: 102, damping: 30, initialVelocity: 14))
                 .offset(y: isShowingProfile ? 80 : UIScreen.main.bounds.height)
             
             HeaderButtonsView(
