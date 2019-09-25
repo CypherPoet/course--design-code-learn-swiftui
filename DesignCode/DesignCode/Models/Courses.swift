@@ -7,9 +7,14 @@
 //
 
 import Foundation
+import SwiftUI
+
 
 struct Course: Identifiable, Hashable {
     let id = UUID()
     
     var title: String
+    var imageName: String
+    var backgroundColor: Color
+    var shadowColor: Color
 }

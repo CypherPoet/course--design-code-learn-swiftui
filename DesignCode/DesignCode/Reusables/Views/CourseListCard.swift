@@ -18,30 +18,32 @@ struct CourseListCard: View {
                 .fontWeight(.bold)
                 .foregroundColor(.white)
                 .lineLimit(4)
-                .frame(width: 140)
+//                .padding(.trailing, 20)
             
             Spacer()
             
-            Image("Illustration1")
+            Image(course.imageName)
+                .renderingMode(.original)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 246, height: 200)
+            
         }
         .padding()
-        .background(Color("background3"))
+        .background(course.backgroundColor)
         .cornerRadius(30)
+        .shadow(color: course.shadowColor, radius: 16, x: 0, y: 10)
         .frame(width: 246, height: 360)
-        .shadow(color: Color("BackgroundShadow3"), radius: 20, x: 0, y: 20)
     }
 }
+
 
 struct CourseListCard_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CourseListCard(course: .constant(Course(
-                title: "Building an app with SwiftUI and Combine"
-            )))
+            CourseListCard(course: .constant(CoursesStore.defaultCourses[0]))
             
-            CourseListCard(course: .constant(Course(
-                title: "Building an app with SwiftUI and Combine"
-            )))
+            CourseListCard(course: .constant(CoursesStore.defaultCourses[1]))
                 .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
         }
         

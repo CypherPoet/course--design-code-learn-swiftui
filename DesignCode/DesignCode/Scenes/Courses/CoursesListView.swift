@@ -11,20 +11,31 @@ import SwiftUI
 struct CoursesListView: View {
     @EnvironmentObject var coursesStore: CoursesStore
     
+    @State private var isShowingCourseSheet = false
+    private var cardInnerSpacing: CGFloat = 26
     
     var body: some View {
         NavigationView {
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(coursesStore.courses.indexed(), id: \.1.id) { index, _ in
-                        CourseListCard(course: self.$coursesStore.courses[index])
-                            .padding(.horizontal)
+                HStack(spacing: cardInnerSpacing) {
+                    ForEach(coursesStore.courses.indexed(), id: \.1.id) { index, course in
+                        Button(action: {
+                            self.isShowingCourseSheet.toggle()
+                        }) {
+                            CourseListCard(course: self.$coursesStore.courses[index])
+                                .padding(.horizontal)
+                        }
+                        .accessibility(label: Text("Open details for the course \"\(course.title)\""))
+                        .sheet(isPresented: self.$isShowingCourseSheet) {
+                            CertificatesView()
+                        }
                     }
+                    .padding(.leading, cardInnerSpacing)
+                    .padding(.vertical)
                 }
             }
             .navigationBarTitle("Courses", displayMode: .large)
         }
-    
     }
 }
 
