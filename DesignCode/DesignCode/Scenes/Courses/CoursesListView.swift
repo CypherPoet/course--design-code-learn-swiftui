@@ -15,27 +15,40 @@ struct CoursesListView: View {
     private var cardInnerSpacing: CGFloat = 26
     
     var body: some View {
-        NavigationView {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: cardInnerSpacing) {
-                    ForEach(coursesStore.courses.indexed(), id: \.1.id) { index, course in
-                        Button(action: {
-                            self.isShowingCourseSheet.toggle()
-                        }) {
-                            CourseListCard(course: self.$coursesStore.courses[index])
-                                .padding(.horizontal)
-                        }
-                        .accessibility(label: Text("Open details for the course \"\(course.title)\""))
-                        .sheet(isPresented: self.$isShowingCourseSheet) {
-                            CertificatesView()
+        VStack(alignment: .leading) {
+            
+            VStack(alignment: .leading, spacing: 12) {
+                Text("\(coursesStore.courses.count) Courses")
+                    .font(.headline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color.secondary)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: cardInnerSpacing) {
+                        ForEach(coursesStore.courses.indexed(), id: \.1.id) { index, course in
+                            Button(action: {
+                                self.isShowingCourseSheet.toggle()
+                            }) {
+                                CourseListCard(course: self.$coursesStore.courses[index])
+                            }
+                            .accessibility(label: Text("Open details for the course \"\(course.title)\""))
+                            .sheet(isPresented: self.$isShowingCourseSheet) {
+                                CertificatesView()
+                            }
                         }
                     }
+                    .padding(.bottom, cardInnerSpacing)
+                    .padding(.leading, cardInnerSpacing)
                 }
-                .padding(.leading, cardInnerSpacing)
-                .padding(.vertical, cardInnerSpacing * 2)
+                .padding(.leading, -cardInnerSpacing)
             }
-            .navigationBarTitle("Courses", displayMode: .large)
+            .padding(.top, 32)
+            
+            Spacer()
+            
         }
+        .padding(.horizontal, 22)
+        .navigationBarTitle("Courses", displayMode: .large)
     }
 }
 

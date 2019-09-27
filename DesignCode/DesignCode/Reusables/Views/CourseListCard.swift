@@ -29,11 +29,11 @@ struct CourseListCard: View {
                 .frame(width: 246, height: 200)
             
         }
+        .frame(width: 246, height: 360)
         .padding()
         .background(course.backgroundColor)
         .cornerRadius(30)
         .shadow(color: course.shadowColor, radius: 16, x: 0, y: 10)
-        .frame(width: 246, height: 360)
     }
 }
 

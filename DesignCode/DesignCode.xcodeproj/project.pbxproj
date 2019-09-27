@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F321C2D5233DB63B00F6CD83 /* UpdatesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321C2D4233DB63B00F6CD83 /* UpdatesListView.swift */; };
+		F321C2D7233DB8EF00F6CD83 /* UserUpdatesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321C2D6233DB8EF00F6CD83 /* UserUpdatesStore.swift */; };
+		F321C2D9233DB95D00F6CD83 /* UserUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321C2D8233DB95D00F6CD83 /* UserUpdate.swift */; };
 		F38D8AAE233609950025B083 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AAD233609950025B083 /* AppDelegate.swift */; };
 		F38D8AB0233609950025B083 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AAF233609950025B083 /* SceneDelegate.swift */; };
 		F38D8AB2233609950025B083 /* CertificatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AB1233609950025B083 /* CertificatesView.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F321C2D4233DB63B00F6CD83 /* UpdatesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesListView.swift; sourceTree = "<group>"; };
+		F321C2D6233DB8EF00F6CD83 /* UserUpdatesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdatesStore.swift; sourceTree = "<group>"; };
+		F321C2D8233DB95D00F6CD83 /* UserUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdate.swift; sourceTree = "<group>"; };
 		F38D8AAA233609950025B083 /* DesignCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F38D8AAD233609950025B083 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F38D8AAF233609950025B083 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +73,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F321C2D2233DB60E00F6CD83 /* Certificates */ = {
+			isa = PBXGroup;
+			children = (
+				F38D8AB1233609950025B083 /* CertificatesView.swift */,
+			);
+			path = Certificates;
+			sourceTree = "<group>";
+		};
+		F321C2D3233DB61D00F6CD83 /* Updates */ = {
+			isa = PBXGroup;
+			children = (
+				F321C2D4233DB63B00F6CD83 /* UpdatesListView.swift */,
+			);
+			path = Updates;
+			sourceTree = "<group>";
+		};
 		F38D8AA1233609950025B083 = {
 			isa = PBXGroup;
 			children = (
@@ -118,9 +140,10 @@
 		F38D8AC423360D9E0025B083 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F321C2D3233DB61D00F6CD83 /* Updates */,
+				F321C2D2233DB60E00F6CD83 /* Certificates */,
 				F38D8ADC233971C50025B083 /* Courses */,
 				F38D8AB8233609980025B083 /* LaunchScreen.storyboard */,
-				F38D8AB1233609950025B083 /* CertificatesView.swift */,
 				F38D8AC92337B2FC0025B083 /* Home.swift */,
 			);
 			path = Scenes;
@@ -155,6 +178,7 @@
 				F38D8AD62337E6F10025B083 /* Stores */,
 				F38D8AD42337E0420025B083 /* MenuItem.swift */,
 				F38D8AE1233973FC0025B083 /* Courses.swift */,
+				F321C2D8233DB95D00F6CD83 /* UserUpdate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -164,6 +188,7 @@
 			children = (
 				F38D8AD72337E7110025B083 /* MenuStore.swift */,
 				F38D8ADF233973EC0025B083 /* CoursesStore.swift */,
+				F321C2D6233DB8EF00F6CD83 /* UserUpdatesStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -257,9 +282,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F38D8AD82337E7110025B083 /* MenuStore.swift in Sources */,
+				F321C2D9233DB95D00F6CD83 /* UserUpdate.swift in Sources */,
 				F38D8AAE233609950025B083 /* AppDelegate.swift in Sources */,
 				F38D8AE2233973FC0025B083 /* Courses.swift in Sources */,
 				F38D8AD02337DB0D0025B083 /* SettingsMenu.swift in Sources */,
+				F321C2D7233DB8EF00F6CD83 /* UserUpdatesStore.swift in Sources */,
 				F38D8ADE233971DE0025B083 /* CoursesListView.swift in Sources */,
 				F38D8AB0233609950025B083 /* SceneDelegate.swift in Sources */,
 				F38D8AE6233AB2C40025B083 /* CourseListCard.swift in Sources */,
@@ -267,6 +294,7 @@
 				F38D8ACA2337B2FC0025B083 /* Home.swift in Sources */,
 				F38D8AD22337DB4E0025B083 /* MenuRow.swift in Sources */,
 				F38D8AD52337E0420025B083 /* MenuItem.swift in Sources */,
+				F321C2D5233DB63B00F6CD83 /* UpdatesListView.swift in Sources */,
 				F38D8ADB23395B700025B083 /* FloatingCircleButtonStyle.swift in Sources */,
 				F38D8AE4233976A40025B083 /* IndexedCollection.swift in Sources */,
 				F38D8AB2233609950025B083 /* CertificatesView.swift in Sources */,
