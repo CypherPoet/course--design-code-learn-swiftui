@@ -16,6 +16,7 @@ struct UserUpdate: Identifiable, Hashable {
     var bodyText: String
     var isUnread: Bool = true
     var date: Date
+    var imageName: String
 }
 
 
