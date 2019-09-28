@@ -30,11 +30,9 @@ struct UserUpdatesListView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         Text(update.title)
                             .font(.headline)
-                        //                        .fontWeight(.bold)
                         Text(update.bodyText)
                             .font(.subheadline)
                             .lineLimit(2)
-    //                        .frame(minHeight: 44, alignment: .topLeading)
                         Text(update.formattedDate)
                             .font(.caption)
                             .fontWeight(.bold)
