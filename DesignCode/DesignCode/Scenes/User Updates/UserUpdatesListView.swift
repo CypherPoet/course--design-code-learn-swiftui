@@ -1,5 +1,5 @@
 //
-//  UpdatesListView.swift
+//  UserUpdatesListView.swift
 //  DesignCode
 //
 //  Created by Brian Sipple on 9/26/19.
@@ -9,16 +9,16 @@
 import SwiftUI
 
 
-struct UpdatesListView: View {
+struct UserUpdatesListView: View {
     @EnvironmentObject var updatesStore: UserUpdatesStore
     @State private var isShowingSettingsView = false
     
     var body: some View {
-        List(updatesStore.updates.indexed(), id: \.1.id) { index, update in
-            NavigationLink(
-                destination: UserUpdateDetailView(userUpdate: self.$updatesStore.updates[index]
-            )) {
-                HStack(spacing: 12) {
+        List {
+            ForEach(updatesStore.updates.indexed(), id: \.1.id) { index, update in
+                NavigationLink(
+                    destination: UserUpdateDetailView(userUpdate: self.$updatesStore.updates[index]
+                )) {
                     Image(update.imageName)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -39,16 +39,20 @@ struct UpdatesListView: View {
                             .font(.caption)
                             .fontWeight(.bold)
                     }
+                    .padding(.horizontal)
                 }
+                .padding(.vertical)
             }
-            .padding(.vertical)
+            .onDelete(perform: deleteUserUpdate)
+            .onMove(perform: moveUserUpdate)
         }
         .navigationBarTitle("Updates")
-        .navigationBarItems(trailing:
-            Button(action: {
-                self.isShowingSettingsView.toggle()
+        .navigationBarItems(
+            leading: EditButton(),
+            trailing: Button(action: {
+                self.addUserUpdate()
             }) {
-                Image(systemName: "gear")
+                Image(systemName: "plus")
                     .imageScale(.large)
             }
         )
@@ -59,10 +63,34 @@ struct UpdatesListView: View {
 }
 
 
+// MARK: - Private Helpers
+private extension UserUpdatesListView {
+    
+    func addUserUpdate() {
+        updatesStore.updates.append(UserUpdate(
+            title: "New Update",
+            bodyText: "⚡️⚡️⚡️⚡️⚡️⚡️⚡️",
+            date: Date(),
+            imageName: "Background"
+        ))
+    }
+    
+    
+    func deleteUserUpdate(at offsets: IndexSet) {
+        updatesStore.updates.remove(atOffsets: offsets)
+    }
+    
+    
+    func moveUserUpdate(from sourceOffset: IndexSet, to destinationIndex: Int) {
+        updatesStore.updates.move(fromOffsets: sourceOffset, toOffset: destinationIndex)
+    }
+}
+
+
 struct UpdateListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            UpdatesListView()
+            UserUpdatesListView()
                 .environmentObject(UserUpdatesStore())
         }
     }
