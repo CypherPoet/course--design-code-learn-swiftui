@@ -44,12 +44,14 @@ extension TabbedHomeView {
                     Text("Certificates")
                 }
                 .tag(1)
+        
                 
-                
-                SettingsMenu()
-                    .tabItem {
-                        Image(systemName: "gear")
-                        Text("Settings")
+                NavigationView {
+                    SettingsView()
+                }
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
                 }
                 .tag(2)
             }

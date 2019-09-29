@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct SettingsMenu: View {
+struct SidebarMenu: View {
     @EnvironmentObject var menuStore: MenuStore
     
     
@@ -27,7 +27,7 @@ struct SettingsMenu: View {
 
 struct SettingsMenu_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsMenu()
+        SidebarMenu()
             .environmentObject(MenuStore())
     }
 }

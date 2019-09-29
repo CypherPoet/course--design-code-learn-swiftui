@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let contentView = TabbedHomeView()
             .environmentObject(MenuStore())
             .environmentObject(CoursesStore())
+            .environmentObject(SettingsStore())
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

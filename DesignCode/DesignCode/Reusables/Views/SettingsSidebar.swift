@@ -14,7 +14,7 @@ struct SettingsSidebar: View {
     var sidebarOffsetFactor: CGFloat { isShowing ? 0 : 1 }
     
     var body: some View {
-        SettingsMenu()
+        SidebarMenu()
             .padding(.top, 20)
             .padding(30)
             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)

@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 
-struct Course: Identifiable, Hashable {
+struct Course: Identifiable {
     let id = UUID()
     
     var title: String
@@ -18,3 +18,7 @@ struct Course: Identifiable, Hashable {
     var backgroundColor: Color
     var shadowColor: Color
 }
+
+
+extension Course: Hashable {}
+extension Course: PropertyListValue {}
