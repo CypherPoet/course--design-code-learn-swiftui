@@ -47,7 +47,7 @@ struct CoursesListView: View {
             Spacer()
             
         }
-        .padding(.horizontal, 22)
+        .padding(.leading, 22)
         .navigationBarTitle("Courses", displayMode: .large)
     }
 }

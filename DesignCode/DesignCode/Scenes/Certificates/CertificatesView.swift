@@ -17,11 +17,14 @@ struct CertificatesView: View {
     var cardTwistFactor: Double { isCardTwisted ? 1 : 0 }
     
     var body: some View {
-        
         ZStack {
             BlurEffectView(blurStyle: .systemUltraThinMaterial)
             
-            HeaderView()
+            VStack {
+                Image("Illustration5")
+                Spacer()
+            }
+                .padding()
                 .blur(radius: 6 * CGFloat(cardTwistFactor))
                 .animation(.easeOut)
             
@@ -73,9 +76,10 @@ struct CertificatesView: View {
                 )
             
             BottomModal()
-                .blur(radius: 6 * CGFloat(cardTwistFactor))
+                .frame(minWidth: 100, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity)
                 .animation(.easeOut)
         }
+        .navigationBarTitle("Certificates", displayMode: .large)
     }
 }
 
@@ -90,46 +94,29 @@ private struct RearCardView: View {
 }
 
 
-private struct HeaderView: View {
+private struct BottomModal: View {
     var body: some View {
-        VStack {
-            HStack {
-                Text("Certificates")
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
+        GeometryReader { geometry in
+            VStack(spacing: 20) {
+                Rectangle()
+                    .frame(width: 60, height: 6)
+                    .cornerRadius(3)
+                    .opacity(0.12)
+                
+                Text("This certificate means you're awesome 🙌!")
+                    .lineLimit(10)
                 
                 Spacer()
             }
-            
-            Image("Illustration5")
-            
-            Spacer()
+            .edgesIgnoringSafeArea(.bottom)
+            .padding()
+            .padding(.horizontal)
+            .background(BlurEffectView(blurStyle: .systemThinMaterial))
+            .cornerRadius(20)
+            .shadow(radius: 20)
+            .edgesIgnoringSafeArea(.bottom)
+            .offset(x: 0, y: geometry.size.height * 0.8)
         }
-        .padding()
-    }
-}
-
-
-private struct BottomModal: View {
-    var body: some View {
-        VStack(spacing: 20) {
-            Rectangle()
-                .frame(width: 60, height: 6)
-                .cornerRadius(3)
-                .opacity(0.12)
-            
-            Text("This certificate means you're awesome 🙌!")
-                .lineLimit(10)
-            
-            Spacer()
-        }
-        .frame(minWidth: 100, maxWidth: .infinity)
-        .padding()
-        .padding(.horizontal)
-        .background(Color.white)
-        .cornerRadius(20)
-        .shadow(radius: 20)
-        .offset(x: 0, y: 600)
     }
 }
 
@@ -137,5 +124,8 @@ private struct BottomModal: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         CertificatesView()
+            .environment(\.colorScheme, .dark)
+            .environmentObject(MenuStore())
+            .environmentObject(CoursesStore())
     }
 }

@@ -39,7 +39,7 @@ struct Home: View {
                     .padding()
                 )
             }
-    
+            
             HeaderButtonsView(
                 isShowingSidebar: $isShowingSidebar,
                 isShowingProfile: $isShowingProfile

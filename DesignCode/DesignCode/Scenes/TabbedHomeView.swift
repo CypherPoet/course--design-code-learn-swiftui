@@ -25,30 +25,31 @@ extension TabbedHomeView {
         
         var body: some View {
             TabView(selection: $selectedTabTag) {
+                
                 NavigationView {
                     CoursesListView()
-                        .tabItem {
-                            Image(systemName: "book")
-                            Text("Courses")
-                    }
+                }
+                .tabItem {
+                    Image(systemName: "book")
+                    Text("Courses")
                 }
                 .tag(0)
                 
+                
                 NavigationView {
                     CertificatesView()
-                        .tabItem {
-                            Image(systemName: "rectangle.fill.badge.checkmark")
-                            Text("Certificates")
-                    }
+                }
+                .tabItem {
+                    Image(systemName: "rectangle.fill.badge.checkmark")
+                    Text("Certificates")
                 }
                 .tag(1)
-
-                NavigationView {
-                    SettingsMenu()
-                        .tabItem {
-                            Image(systemName: "gear")
-                            Text("Settings")
-                    }
+                
+                
+                SettingsMenu()
+                    .tabItem {
+                        Image(systemName: "gear")
+                        Text("Settings")
                 }
                 .tag(2)
             }
