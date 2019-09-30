@@ -12,6 +12,9 @@ struct CoursesListView: View {
     @EnvironmentObject var coursesStore: CoursesStore
     
     @State private var isShowingCourseSheet = false
+    
+    private var cardWidth: CGFloat = 246
+    private var cardHeight: CGFloat = 360
     private var cardInnerSpacing: CGFloat = 26
     
     var body: some View {
@@ -26,29 +29,42 @@ struct CoursesListView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: cardInnerSpacing) {
                         ForEach(coursesStore.courses.indexed(), id: \.1.id) { index, course in
-                            Button(action: {
-                                self.isShowingCourseSheet.toggle()
-                            }) {
-                                CourseListCard(course: self.$coursesStore.courses[index])
+                            GeometryReader { geometry in
+                                Button(action: {
+                                    self.isShowingCourseSheet.toggle()
+                                }) {
+                                    CourseListCard(
+                                        course: self.$coursesStore.courses[index],
+                                        cardWidth: self.cardWidth,
+                                        cardHeight: self.cardHeight
+                                    )
+                                }
+                                .rotation3DEffect(
+                                    .radians(
+                                        Double(geometry.frame(in: .global).minX - self.cardInnerSpacing) / (.pi * 200)
+                                    ),
+                                    axis: (x: 1.0, y: 1.0, z: 0.5)
+                                )
+                                .accessibility(label: Text("Open details for the course \"\(course.title)\""))
                             }
-                            .accessibility(label: Text("Open details for the course \"\(course.title)\""))
-                            .sheet(isPresented: self.$isShowingCourseSheet) {
-                                CertificatesView()
-                            }
+                            .frame(width: self.cardWidth, height: self.cardHeight)
                         }
                     }
-                    .padding(.bottom, cardInnerSpacing)
+                    .padding(.vertical, cardInnerSpacing)
                     .padding(.leading, cardInnerSpacing)
                 }
                 .padding(.leading, -cardInnerSpacing)
             }
-            .padding(.top, 32)
+            .padding(.top, 64)
             
             Spacer()
             
         }
         .padding(.leading, 22)
         .navigationBarTitle("Courses", displayMode: .large)
+        .sheet(isPresented: self.$isShowingCourseSheet) {
+            CertificatesView()
+        }
     }
 }
 

@@ -11,6 +11,9 @@ import SwiftUI
 struct CourseListCard: View {
     @Binding var course: Course
     
+    var cardWidth: CGFloat = 246
+    var cardHeight: CGFloat = 360
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text(course.title)
@@ -18,19 +21,24 @@ struct CourseListCard: View {
                 .fontWeight(.bold)
                 .foregroundColor(.white)
                 .lineLimit(4)
-//                .padding(.trailing, 20)
             
             Spacer()
-            
-            Image(course.imageName)
-                .renderingMode(.original)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 246, height: 200)
-            
         }
-        .frame(width: 246, height: 360)
         .padding()
+        .frame(width: cardWidth, height: cardHeight)
+        .background(
+            VStack {
+                Spacer()
+                
+                Image(course.imageName)
+                    .renderingMode(.original)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding()
+                    .padding(.vertical)
+                    .frame(width: cardWidth * 0.9, height: cardHeight * 0.6, alignment: .bottom)
+            }
+        )
         .background(course.backgroundColor)
         .cornerRadius(30)
         .shadow(color: course.shadowColor, radius: 16, x: 0, y: 10)
