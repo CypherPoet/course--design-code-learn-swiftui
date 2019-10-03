@@ -2,30 +2,30 @@
   "object": {
     "pins": [
       {
-        "package": "CypherPoetCore",
-        "repositoryURL": "https://github.com/CypherPoet/CypherPoetCore.git",
+        "package": "fluent-kit",
+        "repositoryURL": "https://github.com/vapor/fluent-kit.git",
         "state": {
           "branch": null,
-          "revision": "0e6206b86b1b84e5daef38e3677880f14331197e",
-          "version": "0.0.2"
+          "revision": "bd98d1ac7b73a18f77838d96b6e3ccfaf1f55b7f",
+          "version": "1.0.0-alpha.3.1"
         }
       },
       {
-        "package": "CypherPoetKit",
-        "repositoryURL": "https://github.com/CypherPoet/CypherPoetKit.git",
+        "package": "sql-kit",
+        "repositoryURL": "https://github.com/vapor/sql-kit.git",
         "state": {
           "branch": null,
-          "revision": "8186bc842653648a1f591037e3f4393a55813809",
-          "version": "0.0.4"
+          "revision": "354c843f7868eaf93a84b766d652fac8b61d86dd",
+          "version": "3.0.0-alpha.1.3"
         }
       },
       {
-        "package": "CypherPoetUI",
-        "repositoryURL": "https://github.com/CypherPoet/CypherPoetUI.git",
+        "package": "swift-nio",
+        "repositoryURL": "https://github.com/apple/swift-nio.git",
         "state": {
           "branch": null,
-          "revision": "f83d8caae6fc69ddaac97c79b0349cb9e3dec68a",
-          "version": "0.0.4"
+          "revision": "9201908b54578aa33f1d1826a5a680aca8991843",
+          "version": "2.8.0"
         }
       }
     ]

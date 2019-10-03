@@ -15,6 +15,7 @@ struct SettingsSidebar: View {
     
     var body: some View {
         SidebarMenu()
+            .environmentObject(MenuStore())
             .padding(.top, 20)
             .padding(30)
             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
@@ -36,6 +37,5 @@ struct SettingsSidebar: View {
 struct SettingsSidebar_Previews: PreviewProvider {
     static var previews: some View {
         SettingsSidebar(isShowing: .constant(false))
-            .environmentObject(MenuStore())
     }
 }

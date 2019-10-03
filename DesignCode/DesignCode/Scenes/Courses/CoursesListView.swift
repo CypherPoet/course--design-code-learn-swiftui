@@ -18,52 +18,35 @@ struct CoursesListView: View {
     private var cardInnerSpacing: CGFloat = 26
     
     var body: some View {
-        VStack(alignment: .leading) {
-            
-            VStack(alignment: .leading, spacing: 12) {
-                Text("\(coursesStore.courses.count) Courses")
-                    .font(.headline)
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color.secondary)
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: cardInnerSpacing) {
-                        ForEach(coursesStore.courses.indexed(), id: \.1.id) { index, course in
-                            GeometryReader { geometry in
-                                Button(action: {
-                                    self.isShowingCourseSheet.toggle()
-                                }) {
-                                    CourseListCard(
-                                        course: self.$coursesStore.courses[index],
-                                        cardWidth: self.cardWidth,
-                                        cardHeight: self.cardHeight
-                                    )
-                                }
-                                .rotation3DEffect(
-                                    .radians(
-                                        Double(geometry.frame(in: .global).minX - self.cardInnerSpacing) / (.pi * 200)
-                                    ),
-                                    axis: (x: 1.0, y: 1.0, z: 0.5)
-                                )
-                                .accessibility(label: Text("Open details for the course \"\(course.title)\""))
-                            }
-                            .frame(width: self.cardWidth, height: self.cardHeight)
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: cardInnerSpacing) {
+                ForEach(coursesStore.courses.indexed(), id: \.1.id) { index, course in
+                    GeometryReader { geometry in
+                        Button(action: {
+                            self.isShowingCourseSheet.toggle()
+                        }) {
+                            CourseListCard(
+                                course: self.$coursesStore.courses[index],
+                                cardWidth: self.cardWidth,
+                                cardHeight: self.cardHeight
+                            )
                         }
+                        .rotation3DEffect(
+                            .radians(
+                                Double(geometry.frame(in: .global).minX - self.cardInnerSpacing) / (.pi * 200)
+                            ),
+                            axis: (x: 1.0, y: 1.0, z: 0.5)
+                        )
+                        .accessibility(label: Text("Open details for the course \"\(course.title)\""))
                     }
-                    .padding(.vertical, cardInnerSpacing)
-                    .padding(.leading, cardInnerSpacing)
+                    .frame(width: self.cardWidth, height: self.cardHeight)
                 }
-                .padding(.leading, -cardInnerSpacing)
             }
-            .padding(.top, 64)
-            
-            Spacer()
-            
+            .padding(.vertical, cardInnerSpacing * 2)
+            .padding(.leading, cardInnerSpacing)
         }
-        .padding(.leading, 22)
-        .navigationBarTitle("Courses", displayMode: .large)
         .sheet(isPresented: self.$isShowingCourseSheet) {
-            CertificatesView()
+            CertificateDetailView(certificate: .constant(CertificatesStore.defaultCertificates[0]))
         }
     }
 }

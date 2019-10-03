@@ -11,14 +11,17 @@
 		F321C2D7233DB8EF00F6CD83 /* UserUpdatesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321C2D6233DB8EF00F6CD83 /* UserUpdatesStore.swift */; };
 		F321C2D9233DB95D00F6CD83 /* UserUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321C2D8233DB95D00F6CD83 /* UserUpdate.swift */; };
 		F321C2DB233DD28500F6CD83 /* UserUpdateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321C2DA233DD28500F6CD83 /* UserUpdateDetailView.swift */; };
+		F366C3272342891A009770A5 /* CertificatesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366C3262342891A009770A5 /* CertificatesListView.swift */; };
+		F366C3292342896C009770A5 /* CertificatesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366C3282342896C009770A5 /* CertificatesStore.swift */; };
+		F366C32B23428A3C009770A5 /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366C32A23428A3C009770A5 /* Certificate.swift */; };
 		F38D8AAE233609950025B083 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AAD233609950025B083 /* AppDelegate.swift */; };
 		F38D8AB0233609950025B083 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AAF233609950025B083 /* SceneDelegate.swift */; };
-		F38D8AB2233609950025B083 /* CertificatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AB1233609950025B083 /* CertificatesView.swift */; };
+		F38D8AB2233609950025B083 /* CertificateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AB1233609950025B083 /* CertificateDetailView.swift */; };
 		F38D8AB4233609980025B083 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F38D8AB3233609980025B083 /* Assets.xcassets */; };
 		F38D8AB7233609980025B083 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F38D8AB6233609980025B083 /* Preview Assets.xcassets */; };
 		F38D8ABA233609980025B083 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38D8AB8233609980025B083 /* LaunchScreen.storyboard */; };
 		F38D8AC323360BA80025B083 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F38D8AC223360BA80025B083 /* Colors.xcassets */; };
-		F38D8ACA2337B2FC0025B083 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AC92337B2FC0025B083 /* Home.swift */; };
+		F38D8ACA2337B2FC0025B083 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AC92337B2FC0025B083 /* HomeView.swift */; };
 		F38D8ACC2337B9B00025B083 /* CertificateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8ACB2337B9B00025B083 /* CertificateCard.swift */; };
 		F38D8ACE2337D1DE0025B083 /* SettingsSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8ACD2337D1DE0025B083 /* SettingsSidebar.swift */; };
 		F38D8AD02337DB0D0025B083 /* SidebarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8ACF2337DB0D0025B083 /* SidebarMenu.swift */; };
@@ -28,7 +31,7 @@
 		F38D8ADB23395B700025B083 /* FloatingCircleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8ADA23395B700025B083 /* FloatingCircleButtonStyle.swift */; };
 		F38D8ADE233971DE0025B083 /* CoursesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8ADD233971DE0025B083 /* CoursesListView.swift */; };
 		F38D8AE0233973EC0025B083 /* CoursesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8ADF233973EC0025B083 /* CoursesStore.swift */; };
-		F38D8AE2233973FC0025B083 /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AE1233973FC0025B083 /* Courses.swift */; };
+		F38D8AE2233973FC0025B083 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AE1233973FC0025B083 /* Course.swift */; };
 		F38D8AE4233976A40025B083 /* IndexedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AE3233976A40025B083 /* IndexedCollection.swift */; };
 		F38D8AE6233AB2C40025B083 /* CourseListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AE5233AB2C40025B083 /* CourseListCard.swift */; };
 		F38D8AE8233BCFC50025B083 /* BlurEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D8AE7233BCFC50025B083 /* BlurEffectView.swift */; };
@@ -45,16 +48,19 @@
 		F321C2D6233DB8EF00F6CD83 /* UserUpdatesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdatesStore.swift; sourceTree = "<group>"; };
 		F321C2D8233DB95D00F6CD83 /* UserUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdate.swift; sourceTree = "<group>"; };
 		F321C2DA233DD28500F6CD83 /* UserUpdateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateDetailView.swift; sourceTree = "<group>"; };
+		F366C3262342891A009770A5 /* CertificatesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificatesListView.swift; sourceTree = "<group>"; };
+		F366C3282342896C009770A5 /* CertificatesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificatesStore.swift; sourceTree = "<group>"; };
+		F366C32A23428A3C009770A5 /* Certificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
 		F38D8AAA233609950025B083 /* DesignCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F38D8AAD233609950025B083 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F38D8AAF233609950025B083 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F38D8AB1233609950025B083 /* CertificatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificatesView.swift; sourceTree = "<group>"; };
+		F38D8AB1233609950025B083 /* CertificateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateDetailView.swift; sourceTree = "<group>"; };
 		F38D8AB3233609980025B083 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F38D8AB6233609980025B083 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F38D8AB9233609980025B083 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F38D8ABB233609980025B083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F38D8AC223360BA80025B083 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		F38D8AC92337B2FC0025B083 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		F38D8AC92337B2FC0025B083 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F38D8ACB2337B9B00025B083 /* CertificateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateCard.swift; sourceTree = "<group>"; };
 		F38D8ACD2337D1DE0025B083 /* SettingsSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSidebar.swift; sourceTree = "<group>"; };
 		F38D8ACF2337DB0D0025B083 /* SidebarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarMenu.swift; sourceTree = "<group>"; };
@@ -64,7 +70,7 @@
 		F38D8ADA23395B700025B083 /* FloatingCircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingCircleButtonStyle.swift; sourceTree = "<group>"; };
 		F38D8ADD233971DE0025B083 /* CoursesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesListView.swift; sourceTree = "<group>"; };
 		F38D8ADF233973EC0025B083 /* CoursesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesStore.swift; sourceTree = "<group>"; };
-		F38D8AE1233973FC0025B083 /* Courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
+		F38D8AE1233973FC0025B083 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		F38D8AE3233976A40025B083 /* IndexedCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedCollection.swift; sourceTree = "<group>"; };
 		F38D8AE5233AB2C40025B083 /* CourseListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListCard.swift; sourceTree = "<group>"; };
 		F38D8AE7233BCFC50025B083 /* BlurEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffectView.swift; sourceTree = "<group>"; };
@@ -90,7 +96,8 @@
 		F321C2D2233DB60E00F6CD83 /* Certificates */ = {
 			isa = PBXGroup;
 			children = (
-				F38D8AB1233609950025B083 /* CertificatesView.swift */,
+				F38D8AB1233609950025B083 /* CertificateDetailView.swift */,
+				F366C3262342891A009770A5 /* CertificatesListView.swift */,
 			);
 			path = Certificates;
 			sourceTree = "<group>";
@@ -160,7 +167,7 @@
 				F321C2D2233DB60E00F6CD83 /* Certificates */,
 				F38D8ADC233971C50025B083 /* Courses */,
 				F38D8AB8233609980025B083 /* LaunchScreen.storyboard */,
-				F38D8AC92337B2FC0025B083 /* Home.swift */,
+				F38D8AC92337B2FC0025B083 /* HomeView.swift */,
 				F3C7BA9D233FBE5E0056789D /* TabbedHomeView.swift */,
 			);
 			path = Scenes;
@@ -196,8 +203,9 @@
 			children = (
 				F38D8AD62337E6F10025B083 /* Stores */,
 				F38D8AD42337E0420025B083 /* MenuItem.swift */,
-				F38D8AE1233973FC0025B083 /* Courses.swift */,
+				F38D8AE1233973FC0025B083 /* Course.swift */,
 				F321C2D8233DB95D00F6CD83 /* UserUpdate.swift */,
+				F366C32A23428A3C009770A5 /* Certificate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,6 +217,7 @@
 				F38D8ADF233973EC0025B083 /* CoursesStore.swift */,
 				F321C2D6233DB8EF00F6CD83 /* UserUpdatesStore.swift */,
 				F3FEF942234120A2006748EA /* SettingsStore.swift */,
+				F366C3282342896C009770A5 /* CertificatesStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -332,7 +341,8 @@
 				F321C2D9233DB95D00F6CD83 /* UserUpdate.swift in Sources */,
 				F38D8AAE233609950025B083 /* AppDelegate.swift in Sources */,
 				F3FEF943234120A2006748EA /* SettingsStore.swift in Sources */,
-				F38D8AE2233973FC0025B083 /* Courses.swift in Sources */,
+				F366C3272342891A009770A5 /* CertificatesListView.swift in Sources */,
+				F38D8AE2233973FC0025B083 /* Course.swift in Sources */,
 				F3FEF946234121C3006748EA /* UserDefault.swift in Sources */,
 				F321C2DB233DD28500F6CD83 /* UserUpdateDetailView.swift in Sources */,
 				F3C7BA9E233FBE5E0056789D /* TabbedHomeView.swift in Sources */,
@@ -340,17 +350,19 @@
 				F321C2D7233DB8EF00F6CD83 /* UserUpdatesStore.swift in Sources */,
 				F38D8ADE233971DE0025B083 /* CoursesListView.swift in Sources */,
 				F38D8AB0233609950025B083 /* SceneDelegate.swift in Sources */,
+				F366C32B23428A3C009770A5 /* Certificate.swift in Sources */,
 				F38D8AE6233AB2C40025B083 /* CourseListCard.swift in Sources */,
 				F38D8ACC2337B9B00025B083 /* CertificateCard.swift in Sources */,
-				F38D8ACA2337B2FC0025B083 /* Home.swift in Sources */,
+				F38D8ACA2337B2FC0025B083 /* HomeView.swift in Sources */,
 				F38D8AD22337DB4E0025B083 /* MenuRow.swift in Sources */,
 				F38D8AD52337E0420025B083 /* MenuItem.swift in Sources */,
 				F321C2D5233DB63B00F6CD83 /* UserUpdatesListView.swift in Sources */,
 				F38D8ADB23395B700025B083 /* FloatingCircleButtonStyle.swift in Sources */,
 				F38D8AE4233976A40025B083 /* IndexedCollection.swift in Sources */,
-				F38D8AB2233609950025B083 /* CertificatesView.swift in Sources */,
+				F38D8AB2233609950025B083 /* CertificateDetailView.swift in Sources */,
 				F38D8ACE2337D1DE0025B083 /* SettingsSidebar.swift in Sources */,
 				F38D8AE8233BCFC50025B083 /* BlurEffectView.swift in Sources */,
+				F366C3292342896C009770A5 /* CertificatesStore.swift in Sources */,
 				F38D8AE0233973EC0025B083 /* CoursesStore.swift in Sources */,
 				F3FEF94B2341371F006748EA /* Constants.swift in Sources */,
 			);

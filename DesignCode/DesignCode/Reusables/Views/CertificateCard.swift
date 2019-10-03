@@ -9,6 +9,13 @@
 import SwiftUI
 
 struct CertificateCard: View {
+    static var defaultCardSize = CGSize(width: 340, height: 220)
+    
+    var cardSize: CGSize = Self.defaultCardSize
+
+    
+    @Binding var certificate: Certificate
+    
     
     var body: some View {
         VStack {
@@ -34,6 +41,7 @@ struct CertificateCard: View {
             
             Image("Background")
         }
+        .frame(width: cardSize.width, height: cardSize.height)
         .background(Color.black)
         .cornerRadius(18)
         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
@@ -43,6 +51,6 @@ struct CertificateCard: View {
 
 struct CertificateCard_Previews: PreviewProvider {
     static var previews: some View {
-        CertificateCard()
+        CertificateCard(certificate: .constant(CertificatesStore.defaultCertificates[0]))
     }
 }

@@ -11,12 +11,6 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject var settingsStore: SettingsStore
     
-//    @State private var notificationsAreEnabled: Bool = false
-//    @State private var notificationsPerWeek: Int = 1
-//    @State private var favoriteCourse: Course = CoursesStore.defaultCourses[0]
-//    @State private var emailAddress: String = ""
-    
-    
     var body: some View {
         Form {
             Section(header: Text("Notifications")) {
@@ -66,8 +60,6 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             SettingsView()
-                .environmentObject(MenuStore())
-                .environmentObject(CoursesStore())
                 .environmentObject(SettingsStore())
         }
     }

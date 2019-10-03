@@ -28,6 +28,7 @@ extension TabbedHomeView {
                 
                 NavigationView {
                     CoursesListView()
+                        .environmentObject(CoursesStore())
                 }
                 .tabItem {
                     Image(systemName: "book")
@@ -37,7 +38,9 @@ extension TabbedHomeView {
                 
                 
                 NavigationView {
-                    CertificatesView()
+                    CertificatesListView()
+                        .environmentObject(CertificatesStore())
+                        .navigationBarTitle("Certificates", displayMode: .large)
                 }
                 .tabItem {
                     Image(systemName: "rectangle.fill.badge.checkmark")
@@ -48,6 +51,7 @@ extension TabbedHomeView {
                 
                 NavigationView {
                     SettingsView()
+                        .environmentObject(SettingsStore())
                 }
                 .tabItem {
                     Image(systemName: "gear")
@@ -63,7 +67,5 @@ extension TabbedHomeView {
 struct TabbedHomeView_Previews: PreviewProvider {
     static var previews: some View {
         TabbedHomeView()
-            .environmentObject(MenuStore())
-            .environmentObject(CoursesStore())
     }
 }
